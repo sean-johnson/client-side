@@ -15,8 +15,12 @@ xhr.get(endpoint, function (err, data) {
   var target = document.getElementsByTagName('main')[0]
   target.innerHTML = greeting({name: 'Space'})
 
-  var dataRender = data.body
+  function renderData () {
+    console.log("Button was clicked!")
+  }
 
-  var event = document.getElementById("renderBtn")
-  event.addEventListener("click", greeting({render: dataRender}))
+  var buttonClick = document.getElementById("renderBtn")
+  buttonClick.addEventListener("click", renderData)
+
+
 })
