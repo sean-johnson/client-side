@@ -70,9 +70,9 @@ module.exports=require("./dist/cjs/handlebars.runtime")["default"];
 module.exports=require("handlebars/runtime")["default"];
 },{"handlebars/runtime":22}],24:[function(require,module,exports){
 function isFunction(o){var t=toString.call(o);return"[object Function]"===t||"function"==typeof o&&"[object RegExp]"!==t||"undefined"!=typeof window&&(o===window.setTimeout||o===window.alert||o===window.confirm||o===window.prompt)}module.exports=isFunction;var toString=Object.prototype.toString;
+
 },{}],25:[function(require,module,exports){
 var trim=require("trim"),forEach=require("for-each"),isArray=function(r){return"[object Array]"===Object.prototype.toString.call(r)};module.exports=function(r){if(!r)return{};var e={};return forEach(trim(r).split("\n"),function(r){var t=r.indexOf(":"),i=trim(r.slice(0,t)).toLowerCase(),o=trim(r.slice(t+1));"undefined"==typeof e[i]?e[i]=o:isArray(e[i])?e[i].push(o):e[i]=[e[i],o]}),e};
-
 },{"for-each":2,"trim":26}],26:[function(require,module,exports){
 function trim(r){return r.replace(/^\s*|\s*$/g,"")}exports=module.exports=trim,exports.left=function(r){return r.replace(/^\s*/,"")},exports.right=function(r){return r.replace(/\s*$/,"")};
 
@@ -84,5 +84,5 @@ function once(n){var o=!1;return function(){if(!o)return o=!0,n.apply(this,argum
 function extend(){for(var r={},e=0;e<arguments.length;e++){var t=arguments[e];for(var n in t)hasOwnProperty.call(t,n)&&(r[n]=t[n])}return r}module.exports=extend;var hasOwnProperty=Object.prototype.hasOwnProperty;
 
 },{}],30:[function(require,module,exports){
-var HandlebarsCompiler=require("hbsfy/runtime");module.exports=HandlebarsCompiler.template({compiler:[7,">= 4.0.0"],main:function(s,l,e,i,n){var a,t=null!=l?l:{},d=e.helperMissing,r="function",u=s.escapeExpression;return"<h1>Hello "+u((a=null!=(a=e.name||(null!=l?l.name:l))?a:d,typeof a===r?a.call(t,{name:"name",hash:{},data:n}):a))+'!</h1>\n\n<button id="renderBtn">Click me</button>\n\n<ul id="renderedData"> '+u((a=null!=(a=e.tryMe||(null!=l?l.tryMe:l))?a:d,typeof a===r?a.call(t,{name:"tryMe",hash:{},data:n}):a))+'\n  <li id="issName" class="iss-desc">Name: '+u((a=null!=(a=e.tryMe||(null!=l?l.tryMe:l))?a:d,typeof a===r?a.call(t,{name:"tryMe",hash:{},data:n}):a))+'</li>\n  <li id="issId" class="iss-desc">ID:</li>\n  <li id="issLat" class="iss-desc">Latitude:</li>\n  <li id="issLong" class="iss-desc">Longitude:</li>\n  <li id="issAlt" class="iss-desc">Altitude:</li>\n  <li id="issVis" class="iss-desc">Visibility:</li>\n</ul>\n'},useData:!0});
+var HandlebarsCompiler=require("hbsfy/runtime");module.exports=HandlebarsCompiler.template({compiler:[7,">= 4.0.0"],main:function(s,i,l,e,n){var a,t=null!=i?i:{},d=l.helperMissing,r="function",c=s.escapeExpression;return"<h1>Hello "+c((a=null!=(a=l.name||(null!=i?i.name:i))?a:d,typeof a===r?a.call(t,{name:"name",hash:{},data:n}):a))+'!</h1>\n\n<button id="renderBtn">Click me</button>\n\n<ul id="renderedData">\n  <li id="issName" class="iss-desc">Name: '+c((a=null!=(a=l.tryMe||(null!=i?i.tryMe:i))?a:d,typeof a===r?a.call(t,{name:"tryMe",hash:{},data:n}):a))+'</li>\n  <li id="issId" class="iss-desc">ID:</li>\n  <li id="issLat" class="iss-desc">Latitude:</li>\n  <li id="issLong" class="iss-desc">Longitude:</li>\n  <li id="issAlt" class="iss-desc">Altitude:</li>\n  <li id="issVis" class="iss-desc">Visibility:</li>\n</ul>\n'},useData:!0});
 },{"hbsfy/runtime":23}]},{},[1]);
