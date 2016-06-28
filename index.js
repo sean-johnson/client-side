@@ -17,6 +17,8 @@ xhr.get(endpoint, function (err, data) {
 
   function renderData () {
     console.log("Button was clicked!")
+    var newTarget = document.getElementById('renderedData')
+    newTarget.innerHTML = data.body
   }
 
   var buttonClick = document.getElementById("renderBtn")
